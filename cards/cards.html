@@ -14,6 +14,8 @@
 </head>
 
 <body>
+    <button class="btn btn-primary" onclick="addCard()"> Add Card</button>
+    <button class="btn btn-primary" onclick="putDeactivateLabel()"> Add Label</button>
     <div class="container" style="display:flex;">
         <div class="card m-4" style="width: auto;">
             <div class="card-body">
@@ -22,7 +24,7 @@
                     make up the bulk of the
                     card's
                     content.</p>
-                <a style="display: inline;" href="#" class="btn btn-success">Reactivate</a>
+                <a style="display: inline;" href="#" class="btn btn-success reactivateBtn">Reactivate</a>
                 <span style="float: right;"><a href="#" class="badge badge-danger">Deactivated</a></span>
             </div>
         </div>
@@ -33,7 +35,7 @@
                     make up the bulk of the
                     card's
                     content.</p>
-                <a style="display: inline;" href="#" class="btn btn-success">Reactivate</a>
+                <a style="display: inline;" href="#" class="btn btn-success reactivateBtn">Reactivate</a>
                 <span style="float: right;"><a href="#" class="badge badge-danger">Deactivated</a></span>
             </div>
         </div>
@@ -44,7 +46,7 @@
                     make up the bulk of the
                     card's
                     content.</p>
-                <a style="display: inline;" href="#" class="btn btn-success">Reactivate</a>
+                <a style="display: inline;" href="#" class="btn btn-success reactivateBtn">Reactivate</a>
                 <span style="float: right;"><a href="#" class="badge badge-danger">Deactivated</a></span>
             </div>
         </div>
@@ -55,13 +57,14 @@
                     make up the bulk of the
                     card's
                     content.</p>
-                <a style="display: inline;" href="#" class="btn btn-success">Reactivate</a>
+                <a style="display: inline;" href="#" class="btn btn-success reactivateBtn">Reactivate</a>
                 <span style="float: right;"><a href="#" class="badge badge-danger">Deactivated</a></span>
             </div>
         </div>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
+    <script src="cards.js"></script>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
