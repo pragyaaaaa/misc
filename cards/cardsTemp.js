@@ -42,7 +42,6 @@ let anchor = document.createElement("a");
 let isDeactivated = true;
 let badgePlace = document.querySelector(".card-body span");
 reactivateBtn.addEventListener("click", () => {
-  let localbadge = document.querySelectorAll(".card .badge-danger");
   if (isDeactivated === true) {
     reactivateBtn.innerText = "Deactivate";
     let localbadge = document.querySelector(".badge-danger");
