@@ -35,3 +35,29 @@ function createCard() {
   cardDiv.appendChild(cardBodyDiv);
   return cardDiv;
 }
+
+let reactivateBtn = document.querySelector(".reactivateBtn");
+let badge = document.querySelectorAll(".badge-danger");
+let anchor = document.createElement("a");
+let isDeactivated = true;
+let badgePlace = document.querySelector(".card-body span");
+reactivateBtn.addEventListener("click", () => {
+  let localbadge = document.querySelectorAll(".card .badge-danger");
+  if (isDeactivated === true) {
+    reactivateBtn.innerText = "Deactivate";
+    let localbadge = document.querySelector(".badge-danger");
+    reactivateBtn.classList.add("btn-danger");
+    badge[0].remove();
+    localbadge.remove();
+    isDeactivated = false;
+  } else {
+    console.log("Already active.");
+    reactivateBtn.innerText = "Reactivate";
+    reactivateBtn.classList.remove("btn-danger");
+    reactivateBtn.classList.add("btn-success");
+    badgePlace.append(anchor);
+    anchor.classList.add("badge", "badge-danger");
+    anchor.innerText = "Deactivated";
+    isDeactivated = true;
+  }
+});
