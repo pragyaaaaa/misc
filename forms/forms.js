@@ -5,7 +5,7 @@ function validateForm() {
   let buttons = document.getElementsByTagName("button");
   let inputs = document.querySelectorAll("input");
   for (input in inputs) {
-    if (input.value !== "null") {
+    if (input.value !== "") {
       buttons[0].setAttribute("disabled", false);
     } else {
       console.log("Fields are not filled properly.");
