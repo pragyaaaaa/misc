@@ -36,12 +36,33 @@ function createCard() {
   return cardDiv;
 }
 
-let reactivateBtn = document.querySelector(".reactivateBtn");
-let badge = document.querySelectorAll(".badge-danger");
-let anchor = document.createElement("a");
-let isDeactivated = true;
-let badgePlace = document.querySelector(".card-body span");
-reactivateBtn.addEventListener("click", () => {
+let reactivateBtn = document.querySelectorAll(".reactivateBtn");
+
+reactivateBtn.forEach(function (reactivate) {
+  let card = reactivate.parentElement;
+  let badge = card.querySelector(".badge-danger");
+  let anchor = document.createElement("a");
+  let isDeactivated = true;
+
+  reactivate.addEventListener("click", () => {
+    if (isDeactivated === true) {
+      reactivate.innerText = "Deactivate";
+      reactivate.classList.add("btn-danger");
+      badge.remove();
+      isDeactivated = false;
+    } else {
+      console.log("Already active.");
+      reactivate.innerText = "Reactivate";
+      reactivate.classList.remove("btn-danger");
+      reactivate.classList.add("btn-success");
+      card.append(anchor);
+      anchor.classList.add("badge", "badge-danger");
+      anchor.innerText = "Deactivated";
+      isDeactivated = true;
+    }
+  });
+});
+/* reactivateBtn.addEventListener("click", () => {
   if (isDeactivated === true) {
     reactivateBtn.innerText = "Deactivate";
     let localbadge = document.querySelector(".badge-danger");
@@ -60,3 +81,4 @@ reactivateBtn.addEventListener("click", () => {
     isDeactivated = true;
   }
 });
+ */
