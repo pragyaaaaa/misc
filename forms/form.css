@@ -1,0 +1,3 @@
+.testform :not(.NonOpaque) {
+  opacity: 1;
+}
