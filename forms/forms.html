@@ -21,7 +21,7 @@
     </div>
     <div class="container">
         <a id="fillit" type="button" href="">Fill it up</a>
-        <form id="trial">
+        <form id="trial" novalidate onsubmit="return formValidate()">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
@@ -80,7 +80,7 @@
                     </label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" onclick="reactivate()">Sign in</button>
+            <button id="formsub" type="submit" class="btn btn-primary">Sign in</button>
         </form>
     </div>
 

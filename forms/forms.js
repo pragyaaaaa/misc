@@ -1,9 +1,16 @@
 let form = document.querySelector("#trial");
 let inputStateSelect = form.querySelector("#inputState");
+let inputZip = form.querySelector("#inputZip");
+let gridCheck = form.querySelector("#gridCheck");
+let inputCity = form.querySelector("#inputCity");
+let formsub = form.querySelector("#formsub");
+let inputAddress2 = form.querySelector("#inputAddress2");
+let inputAddress = form.querySelector("#inputAddress");
 let inputStateSelectBtn = form.querySelector("#inputStateAdd");
 let stateChips = form.querySelector("#stateChips");
 let progress = form.querySelector("#progresstest");
 let progressbar = document.createElement("div");
+
 inputStateSelectBtn.addEventListener("click", (e) => {
   let temp = inputStateSelect.value;
   let chip = document.createElement("span");
@@ -49,10 +56,28 @@ fillbtn.addEventListener("click", (e) => {
 
 function progressTest() {
   progressbar.innerHTML =
-    '<div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div> </div>';
+    '<div style="opacity: 1;" class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div> </div>';
   progressbar.style.opacity = "unset";
   progress.append(progressbar);
 }
 function progressEndTest() {
   progressbar.innerHTML = " ";
+}
+
+function formValidate() {
+  preventDefault();
+  if (
+    inputStateSelect.value === "" ||
+    inputAddress2.value === "" ||
+    inputAddress2.value === "" ||
+    inputCity === "" ||
+    inputEmail === "" ||
+    inputpass === ""
+  ) {
+    formsub.disabled = true;
+    return false;
+  } else {
+    formsub.disabled = false;
+    return true;
+  }
 }
