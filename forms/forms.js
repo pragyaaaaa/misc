@@ -10,7 +10,8 @@ let inputStateSelectBtn = form.querySelector("#inputStateAdd");
 let stateChips = form.querySelector("#stateChips");
 let progress = form.querySelector("#progresstest");
 let progressbar = document.createElement("div");
-
+let success = document.querySelector("success");
+let successbar = document.querySelector("div");
 inputStateSelectBtn.addEventListener("click", (e) => {
   let temp = inputStateSelect.value;
   let chip = document.createElement("span");
@@ -18,10 +19,10 @@ inputStateSelectBtn.addEventListener("click", (e) => {
   chip.classList.add("badge", "badge-danger", "ml-4");
   chip.innerText = temp;
   stateChips.append(chip);
+  let idx = inputStateSelect.selectedIndex;
   if (temp === "1") {
     inputStateSelect.setAttribute("disabled", true);
   } else {
-    let idx = inputStateSelect.selectedIndex;
     inputStateSelect.options[inputStateSelect.selectedIndex].setAttribute(
       "disabled",
       true
@@ -50,6 +51,7 @@ fillbtn.addEventListener("click", (e) => {
   setTimeout(() => {
     progressEndTest();
     form.style.opacity = 1;
+    successBar();
   }, 9000);
   e.preventDefault();
 });
@@ -62,6 +64,17 @@ function progressTest() {
 }
 function progressEndTest() {
   progressbar.innerHTML = " ";
+}
+
+function successBar() {
+  successbar.innerHTML =
+    '<div class="alert alert-success alert-dismissible fade show" role="alert"> <strong>Holy guacamole!</strong> You should check in on some of those fields below. <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>';
+  success.append(successbar);
+}
+function successBarRem() {
+  successbar.innerHTML =
+    '<div class="alert alert-success" role="alert"> A simple success alert—check it out! </div>';
+  success.append(successbar);
 }
 
 function formValidate() {
