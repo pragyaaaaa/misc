@@ -14,6 +14,14 @@
 </head>
 
 <body>
+    <div class="input-group flex-nowrap">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+            aria-describedby="addon-wrapping">
+        <button id="searchbtn">Search</button>
+    </div>
     <div class="container">
         <button class="btn btn-primary" onclick="addCard()">Add Card</button>
         <section id="userCards">
@@ -124,7 +132,7 @@
 
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="cardsTemp.js"></script>
-    
+
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

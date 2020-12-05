@@ -15,7 +15,7 @@
 
 <body>
     <h1>Hello, world!</h1>
-    <div id="success">
+    <div class="container" id="success">
 
     </div>
     <div class="container">
@@ -60,6 +60,7 @@
                             <option>5</option>
                             <option>6</option>
                             <option>7</option>
+                            <option>Administrator</option>
                             <option>8</option>
                         </select>
                     </div>
@@ -67,21 +68,45 @@
                     <div id="stateChips" style="display: inline;">
                     </div>
                 </div>
+                <div class="form-group col-md-4">
+                    <div style="display: inline; width: 95%;">
+                        <label for="notif">Notifications</label>
+                        <select id="notif" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>Administrator</option>
+                            <option>8</option>
+                        </select>
+                    </div>
+                    <span id="notifAdd" type="button"><strong class="h5">+</strong></span>
+                    <div id="notifChips" style="display: inline;">
+                    </div>
+                </div>
                 <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
+                    <label for="zipcode">Zip</label>
+                    <input type="text" class="form-control " id="zipcode" aria-describedby="zipcodeFeedback" required>
+                    <div id="zipcodeFeedback" class="invalid-feedback">
+                        Please provide a valid zip.
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Check me out
-                    </label>
-                </div>
-            </div>
-            <button id="formsub" type="submit" class="btn btn-primary">Sign in</button>
-        </form>
+    </div>
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+                Check me out
+            </label>
+        </div>
+    </div>
+    <button id="formsub" type="submit" class="btn btn-primary">Sign in</button>
+    </form>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
