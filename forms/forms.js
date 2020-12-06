@@ -26,11 +26,11 @@ function emailret() {
 function passwordret() {
   inputpass.value === "";
 }
-form.addEventListener("onload", (e) => {
+/* form.addEventListener("onload", (e) => {
   formValidate(emailret, passwordret);
-});                                          
+}); */
 //form.onkeyup = formValidate(emailret, passwordret);
-function enableZip() {
+/* function enableZip() {
   if (stateChips.textContent.trim() === "Administrator") {
     zipcode.classList.add("is-invalid");
   }
@@ -49,7 +49,7 @@ function enableNotif() {
   if (stateChips.textContent.trim() === "Administrator") {
     notifSelect.classList.add("is-invalid");
   }
-}
+} */
 
 function selectState(selectdrop, chiparea, callfn) {
   let temp = selectdrop.value;
@@ -71,7 +71,7 @@ function selectState(selectdrop, chiparea, callfn) {
   });
   callfn();
 }
-inputStateSelect.addEventListener("input", (e) => {
+/* inputStateSelect.addEventListener("input", (e) => {
   enableNotifSelect();
 });
 notifSelect.addEventListener("input", (e) => {
@@ -83,7 +83,7 @@ inputStateSelectBtn.addEventListener("click", (e) => {
 notifAddBtn.addEventListener("click", (e) => {
   selectState(notifSelect, notifChips, enableZip);
 });
-
+ */
 fillbtn.addEventListener("click", (e) => {
   form.style.opacity = 0.3;
   setTimeout(() => {
@@ -117,11 +117,11 @@ function successBar() {
   success.append(successbar);
 }
 
-function formValidate(emailval, passval) {
+/* function formValidate(emailval, passval) {
   //preventDefault();
   if (emailval() || passval()) {
     formsub.disabled = true;
   } else {
     formsub.disabled = false;
   }
-}
+} */
