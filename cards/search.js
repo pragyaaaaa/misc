@@ -17,7 +17,7 @@ function getSearchText() {
   searched = searchtext.value.toLowerCase();
   for (let i = 0; i < titles.length; i++) {
     titlearray.push(titles[i]);
-    console.log(titles[i].innerText);
+    //console.log(titles[i].innerText);
   }
   for (let i = 0; i < divs.length; i++) {
     divsarray.push(divs[i]);
@@ -25,11 +25,11 @@ function getSearchText() {
   }
   for (let i = 0; i < para.length; i++) {
     paraarray.push(para[i]);
-    console.log(para[i].innerText);
+    //console.log(para[i].innerText);
   }
   for (let i = 0; i < spans.length; i++) {
     spansarray.push(spans[i]);
-    console.log(spans[i].innerText);
+    //console.log(spans[i].innerText);
   }
   console.log(searched);
 }
