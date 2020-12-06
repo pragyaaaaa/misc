@@ -33,29 +33,28 @@ function getSearchText() {
   }
   console.log(searched);
 }
-searchBtn.addEventListener("click", () => {
-  resultshtmlret.innerHTML = "";
+window.onload = function () {
   getSearchText();
+};
+searchBtn.addEventListener("click", () => {
+  //getSearchText();
   searchTitle(searchtext.value.toLowerCase());
   searchtext.value = "";
 });
 
 function searchTitle(searchcontent) {
+  resultshtmlret.textContent = "";
   resultshtmlret = document.createElement("div");
   if (searchcontent === "") {
     return;
   } else {
     for (let i = 0; i < titlearray.length; i++) {
       //console.log(titlearray[i].innerText);
-      if (titlearray[i].innerText.toLowerCase().match(searched)) {
+      if (titlearray[i].innerText.toLowerCase().match(searchcontent)) {
         clone = titlearray[i].offsetParent.cloneNode(true);
         resultshtmlret.append(clone);
         resultshtml.append(resultshtmlret);
       }
     }
   }
-}
-
-function clearResults() {
-  resultshtml.innerHTML = "";
 }
