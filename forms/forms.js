@@ -4,7 +4,7 @@ let notifSelect = form.querySelector("#notif");
 let inputZip = form.querySelector("#inputZip");
 let gridCheck = form.querySelector("#gridCheck");
 let inputCity = form.querySelector("#inputCity");
-let formsub = form.querySelector("#formsub");
+let formsub = document.querySelector("#formsub");
 let inputAddress2 = form.querySelector("#inputAddress2");
 let inputAddress = form.querySelector("#inputAddress");
 let inputStateSelectBtn = form.querySelector("#inputStateAdd");
@@ -16,10 +16,33 @@ let progressbar = document.createElement("div");
 let success = document.querySelector("#success");
 let successbar = document.querySelector("div");
 let zipcode = document.querySelector("#zipcode");
+let fillbtn = document.querySelector("#fillit");
+let inputEmail = document.querySelector("#inputEmail4");
+let inputpass = document.querySelector("#inputPassword4");
 
+function emailret() {
+  inputEmail.value === "";
+}
+function passwordret() {
+  inputpass.value === "";
+}
+form.addEventListener("onload", (e) => {
+  formValidate(emailret, passwordret);
+});                                          
+//form.onkeyup = formValidate(emailret, passwordret);
 function enableZip() {
   if (stateChips.textContent.trim() === "Administrator") {
     zipcode.classList.add("is-invalid");
+  }
+}
+function enableZipSelect() {
+  if (inputStateSelect.value.trim() === "Administrator") {
+    zipcode.classList.add("is-invalid");
+  }
+}
+function enableNotifSelect() {
+  if (inputStateSelect.value.trim() === "Administrator") {
+    notifSelect.classList.add("is-invalid");
   }
 }
 function enableNotif() {
@@ -48,16 +71,18 @@ function selectState(selectdrop, chiparea, callfn) {
   });
   callfn();
 }
+inputStateSelect.addEventListener("input", (e) => {
+  enableNotifSelect();
+});
+notifSelect.addEventListener("input", (e) => {
+  enableZipSelect();
+});
 inputStateSelectBtn.addEventListener("click", (e) => {
   selectState(inputStateSelect, stateChips, enableNotif);
 });
 notifAddBtn.addEventListener("click", (e) => {
   selectState(notifSelect, notifChips, enableZip);
 });
-
-let fillbtn = document.querySelector("#fillit");
-let inputEmail = document.querySelector("#inputEmail4");
-let inputpass = document.querySelector("#inputPassword4");
 
 fillbtn.addEventListener("click", (e) => {
   form.style.opacity = 0.3;
@@ -92,20 +117,11 @@ function successBar() {
   success.append(successbar);
 }
 
-function formValidate() {
-  preventDefault();
-  if (
-    inputStateSelect.value === "" ||
-    inputAddress2.value === "" ||
-    inputAddress2.value === "" ||
-    inputCity === "" ||
-    inputEmail === "" ||
-    inputpass === ""
-  ) {
+function formValidate(emailval, passval) {
+  //preventDefault();
+  if (emailval() || passval()) {
     formsub.disabled = true;
-    return false;
   } else {
     formsub.disabled = false;
-    return true;
   }
 }
