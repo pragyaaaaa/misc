@@ -28,9 +28,5 @@ $("#trial").validate({
       },
     },
   },
-  messages: {
-    targetSelectDep: {
-      required: "Kindly select something",
-    },
-  },
+ 
 });
